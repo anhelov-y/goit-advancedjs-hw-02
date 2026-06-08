@@ -3,7 +3,7 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig({
-  base: '/goit-advancedjs-hw-02/',
+  base: '',
 
   root: 'src',
   build: {
