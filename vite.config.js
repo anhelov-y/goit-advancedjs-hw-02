@@ -1,12 +1,7 @@
-import { defineConfig } from 'vite';
-import injectHTML from 'vite-plugin-html-inject';
-import FullReload from 'vite-plugin-full-reload';
-import { resolve } from 'path';
-
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   root: 'src',
-  base: './',
-
+  base: command === 'serve' ? '/' : '/goit-advancedjs-hw-02/',
+  
   build: {
     rollupOptions: {
       input: {
@@ -19,4 +14,4 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [injectHTML(), FullReload(['./**/*.html'])],
-});
+}));
