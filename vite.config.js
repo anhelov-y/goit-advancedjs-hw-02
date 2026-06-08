@@ -1,20 +1,32 @@
 import { defineConfig } from 'vite';
+import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
-export default defineConfig({
-  base: '/goit-advancedjs-hw-02/',
+export default defineConfig(({ command }) => {
+  return {
+    // Якщо збірка йде на GitHub, беремо назву репозиторію, інакше — корінь
+    base: command === 'build' ? '/goit-advancedjs-hw-02/' : '/',
 
-  root: 'src',
-  build: {
-    rollupOptions: {
-      input: {
-        main: './index.html',
-        timer: './1-timer.html',
-        snackbar: './2-snackbar.html',
+    root: 'src',
+    build: {
+      sourcemap: true,
+      rollupOptions: {
+        input: glob.sync('./src/*.html'),
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+          entryFileNames: 'assets/[name]-[hash].js',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash].[ext]',
+        },
       },
+      outDir: '../dist',
+      emptyOutDir: true,
     },
-    outDir: '../dist',
-  },
-  plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+  };
 });
