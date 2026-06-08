@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2 - Promise Snackbar</title>
+  <script type="module" crossorigin src="/vanilla-app-template/2-snackbar.js"></script>
+  <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-BbbuE1sJ.js">
+  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/vendor-CZjNVMTf.css">
+  <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/styles-DKGO8alj.css">
+</head>
+
+<body>
+    <div class="container">
+        <header style="margin-top: 20px;">
+            <a href="./index.html" class="back-link">Back to Home</a>
+        </header>
+
+        <main class="snackbar-main">
+            <form class="form">
+                <label class="form-label">
+                    Delay (ms)
+                    <input type="number" name="delay" required min="0" />
+                </label>
+
+                <fieldset class="form-fieldset">
+                    <legend>State</legend>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="state" value="fulfilled" required />
+                            Fulfilled
+                        </label>
+                        <label>
+                            <input type="radio" name="state" value="rejected" required />
+                            Rejected
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Create notification</button>
+            </form>
+        </main>
+    </div>
+
+</body>
+
+</html>
