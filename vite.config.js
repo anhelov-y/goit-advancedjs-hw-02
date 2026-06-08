@@ -5,8 +5,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: 'src',
-  
-  base: '',
+  base: './',
 
   build: {
     rollupOptions: {
