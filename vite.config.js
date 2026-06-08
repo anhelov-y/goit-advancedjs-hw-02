@@ -1,18 +1,19 @@
 import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
+import { resolve } from 'path';
 
 export default defineConfig({
   root: 'src',
-
-  base: process.env.NODE_ENV === 'production' ? './' : '/',
+  
+  base: '',
 
   build: {
     rollupOptions: {
       input: {
-        main: './index.html',
-        timer: './1-timer.html',
-        snackbar: './2-snackbar.html',
+        main: resolve(__dirname, 'src/index.html'),
+        timer: resolve(__dirname, 'src/1-timer.html'),
+        snackbar: resolve(__dirname, 'src/2-snackbar.html'),
       },
     },
     outDir: '../dist',
