@@ -200,3 +200,70 @@
 .form button[type="submit"]:hover {
   background-color: #6c8cff;
 }
+
+.hw2-main {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 80vh !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Контейнер для тексту та кнопок */
+.hw2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto !important;
+  /* Скидаємо зміщення шаблону */
+  padding: 0 20px;
+}
+
+/* Великий заголовок строго по центру */
+.hw2-title {
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2e2f42;
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+/* Перетворюємо список посилань на рядок з кнопками */
+.hw2-nav-list {
+  display: flex !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Стиль для посилань, щоб вони виглядали як красиві однакові кнопки */
+.hw2-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4e75ff;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #4e75ff;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+/* Ефект при наведенні мишкою */
+.hw2-btn:hover {
+  background-color: #4e75ff;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(78, 117, 255, 0.2);
+}
