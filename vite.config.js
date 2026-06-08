@@ -6,7 +6,7 @@ import FullReload from 'vite-plugin-full-reload';
 export default defineConfig(({ command }) => {
   return {
     root: 'src',
-    base: command === 'serve' ? '/' : '/goit-advancedjs-hw-02/',
+    base: './',
     
     build: {
       rollupOptions: {
